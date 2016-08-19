@@ -1,0 +1,67 @@
+*************************************************************************************************************************************************************************
+      Client Test Reader 1.0
+
+                   Victor Chen
+		   8/19/2016
+
+Input:
+-----------------------------------
+Whatis the Port you are using for GPS.
+Example input: COM10
+Second is the reading cycle.
+Example input: 0.1  (if you put 0.1, program should feed back data around every 5 second, if you put 1, would be 6 second etc..) 
+
+
+Output:
+a "Client_sysinfo_data.txt" file will be created under the same folder(Client_Test_Reader)
+if thre already exist one, then new record data will be append at the end of file
+
+Data format would be:
+Time stamp,latency,latitude,longitude,moving_speed,signal_power_dbm,noise_power_dbm,mother_board_temp,daughter_card_temp,channel_id,downlink_modulation,PER
+
+Example output:
+Fri. 19 Aug 2016 12:25:20 +0000, 14ms,37.3938266667,-121.927501667,1.60,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+Fri. 19 Aug 2016 12:25:24 +0000, 12ms,37.3938316667,-121.927506667,0.85,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+Fri. 19 Aug 2016 12:25:28 +0000, 13ms,37.3938066667,-121.9275,0.75,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+Fri. 19 Aug 2016 12:25:32 +0000, 14ms,37.3937983333,-121.927486667,0.55,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+Fri. 19 Aug 2016 12:25:36 +0000, 12ms,37.3937916667,-121.92747,1.07,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+Fri. 19 Aug 2016 12:25:40 +0000, 12ms,37.393805,-121.927456667,0.56,-34.361420,-81.552612,52,48,32,64QAM 5/6,0.0%
+
+
+**************************************************************************************************************************************************************************
+                                                   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+                                                    !!!!!!!!!BEFORE USE!!!!!!!!!
+                                                   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+YOU NEED TO SET UP THE PYTHON ENVIRONMENT BEFORE RUN THE CODE.
+
+right click "This PC"--> Properties --> Advanced system setting(left hand side of window)--> Environment Variables--> under system variables, find "Path"
+
+differnet system have different layout, edit this file, ADD(not replace, add at the end of what you have) 
+
+";C:\Program Files (x86)\Adaptrum\ACSR2\python27"    don't include double quotation marks
+
+This path depends on where you install your Adaptrum TVBD GUI.   
+
+If you can not find the path or still don't know how to set path......Google is your friend.
+
+
+***************************************************************************************************************************************************************************
+
+--------------HOW TO RUN THE CODE---------------------------------------------------------------------------------------------------------------
+
+Most case, you only need double click "ClientMain.py"
+
+if that doesn't work, use cmd, cd to the folder Client_Text_Reader and run this command "python ClientMain.py"
+
+
+--------------HOW TO FIND GPS PORT--------------------------------------------------------------------------------------------------------------
+Control Panel--->Device Manager---->Ports(COM & LPT)--> find your GPS device name, at the end will have the port name (LPTx) or (COMx)
+
+----------------------HOW TO STOP .py-----------------------------------------------------------------------------------------------------------
+
+If Ctrl+C doesn't work..Don't be gentry, press Ctrl then rapid tapping C, program will stop....ultimately.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+GOOD LUCK~
